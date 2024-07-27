@@ -1,6 +1,6 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faL, faHome, faClose } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,7 @@ import { SideNavToggle } from '../../interfaces/sidenav';
   standalone: true,
   imports: [
     RouterLink,
+    RouterLinkActive,
     FontAwesomeModule,
     NgIf,
     NgClass,

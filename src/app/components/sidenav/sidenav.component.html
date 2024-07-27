@@ -11,7 +11,11 @@
     
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item">
-            <a routerLink="/dashboard" class="sidenav-nav-link">
+            <!--
+                RouterLinkActive para marcar a rota ativa;
+                RouterLinkActiveOptions para configura como a diretiva routerlinkactive determinar se uma rota esta ativa.          
+            -->
+            <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <fa-icon [icon]="faHome" class="sidenav-link-icon"></fa-icon>
                 <span class="sidenav-link-text" *ngIf="collapsed">Dashboard</span>
             </a>
