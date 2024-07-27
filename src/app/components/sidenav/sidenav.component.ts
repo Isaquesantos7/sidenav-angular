@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -31,7 +31,7 @@ import { MatInputModule } from '@angular/material/input';
   styleUrl: './sidenav.component.scss'
 })
 
-export class SidenavComponent {
+export class SidenavComponent implements OnInit{
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
 
   protected collapsed: boolean = false;
@@ -40,6 +40,21 @@ export class SidenavComponent {
   protected fal = faL;
   protected faHome = faHome;
   protected faClose = faClose;
+
+  /* Reajustando a janela, fechando o sidenav e atribuindo z-index de acordo a largura da janela */
+  @HostListener('window:resize', ['$event'])
+  public onResize(event: any) {
+    this.screenWidth = window.innerWidth;
+    if (this.screenWidth <= 768) {
+      this.collapsed = false;
+      this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+    }
+  }
+
+  ngOnInit(): void {
+    /* O atributo screenWidth recebendo a largura da janela */
+    this.screenWidth = window.innerWidth;
+  }
 
   public toggleCollapse(): void {
     this.collapsed = !this.collapsed;
