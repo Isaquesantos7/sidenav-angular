@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -11,6 +11,8 @@ import {
 
 import { SideNavToggle } from '../../interfaces/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-sidenav',
@@ -20,6 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     RouterLinkActive,
     FontAwesomeModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
     NgIf,
     NgClass,
   ],

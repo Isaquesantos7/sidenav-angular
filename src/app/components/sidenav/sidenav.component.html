@@ -15,7 +15,14 @@
     -->
 
     <ul class="sidenav-nav">
-        <div class="sidenav-nav-information"></div>
+        <div class="sidenav-nav-information">
+            <mat-form-field appearance="fill" *ngIf="collapsed" class="sidenav-nav-item">
+                <mat-label>Search</mat-label>
+                <input matInput>
+                <mat-icon matSuffix fontIcon="search"></mat-icon>
+            </mat-form-field>
+        </div>
+
         <li class="sidenav-nav-item">
             <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <fa-icon [icon]="faHome" class="sidenav-link-icon"></fa-icon>
@@ -66,8 +73,8 @@
         </li>
 
         <div class="sidenav-nav-information-bottom" *ngIf="collapsed">
-            <h2>Titulo</h2>
-            <p>Minhas informações</p>
+            <h2>Minhas informações</h2>
+            <p>Isaquesantos7</p>
         </div>
     </ul>
 </div>
