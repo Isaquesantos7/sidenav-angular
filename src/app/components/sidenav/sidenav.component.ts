@@ -14,6 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
+import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+
+
 @Component({
   selector: 'app-sidenav',
   standalone: true,
@@ -28,7 +31,29 @@ import { MatInputModule } from '@angular/material/input';
     NgClass,
   ],
   templateUrl: './sidenav.component.html',
-  styleUrl: './sidenav.component.scss'
+  styleUrl: './sidenav.component.scss',
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('350ms', style({opacity: 1}))
+      ]),
+
+      transition(':leave', [
+        style({opacity: 1}),
+        animate('350ms', style({opacity: 0}))
+      ]),
+    ]),
+
+    trigger('ratate', [
+      transition(':enter', [
+        animate('1000ms', keyframes([
+          style({transform: 'rotate(0deg)', offset: '0'}),
+          style({transform: 'rotate(2turn)', offset: '1'}),
+        ]))
+      ])
+    ])
+  ]
 })
 
 export class SidenavComponent implements OnInit{

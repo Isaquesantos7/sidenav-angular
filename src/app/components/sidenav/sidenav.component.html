@@ -2,9 +2,9 @@
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()">A</button>
 
-        <div class="logo-text" *ngIf="collapsed">Angular</div>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
         
-        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()" @ratate>
             <fa-icon [icon]="faClose" class="close-icon"></fa-icon>
         </button>
     </div>
@@ -26,49 +26,49 @@
         <li class="sidenav-nav-item">
             <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <fa-icon [icon]="faHome" class="sidenav-link-icon"></fa-icon>
-                <span class="sidenav-link-text" *ngIf="collapsed">Dashboard</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Dashboard</span>
             </a>
         </li>
 
         <li class="sidenav-nav-item">
             <a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <mat-icon fontIcon="inventory 2" class="sidenav-link-icon"></mat-icon>
-                <span class="sidenav-link-text" *ngIf="collapsed">Products</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Products</span>
             </a>
         </li>
 
         <li class="sidenav-nav-item">
             <a routerLink="/statistics" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <mat-icon fontIcon="analytics" class="sidenav-link-icon"></mat-icon>
-                <span class="sidenav-link-text" *ngIf="collapsed">Statistics</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Statistics</span>
             </a>
         </li>
 
         <li class="sidenav-nav-item">
             <a routerLink="/coupens" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <mat-icon fontIcon="article" class="sidenav-link-icon"></mat-icon>
-                <span class="sidenav-link-text" *ngIf="collapsed">Coupens</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Coupens</span>
             </a>
         </li>
 
         <li class="sidenav-nav-item">
             <a routerLink="/media" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <mat-icon fontIcon="movie" class="sidenav-link-icon"></mat-icon>
-                <span class="sidenav-link-text" *ngIf="collapsed">Media</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Media</span>
             </a>
         </li>
 
         <li class="sidenav-nav-item">
             <a routerLink="/page" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <mat-icon fontIcon="web" class="sidenav-link-icon"></mat-icon>
-                <span class="sidenav-link-text" *ngIf="collapsed">Pages</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Pages</span>
             </a>
         </li>
 
         <li class="sidenav-nav-item">
             <a routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <mat-icon fontIcon="settings" class="sidenav-link-icon"></mat-icon>
-                <span class="sidenav-link-text" *ngIf="collapsed">Settings</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Settings</span>
             </a>
         </li>
 
