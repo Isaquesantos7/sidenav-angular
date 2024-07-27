@@ -3,8 +3,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faL, faHome, faClose } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faL, 
+  faHome, 
+  faClose,
+} from '@fortawesome/free-solid-svg-icons';
+
 import { SideNavToggle } from '../../interfaces/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-sidenav',
@@ -13,6 +19,7 @@ import { SideNavToggle } from '../../interfaces/sidenav';
     RouterLink,
     RouterLinkActive,
     FontAwesomeModule,
+    MatIconModule,
     NgIf,
     NgClass,
   ],

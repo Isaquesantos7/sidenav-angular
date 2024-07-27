@@ -9,16 +9,65 @@
         </button>
     </div>
     
+    <!--
+        RouterLinkActive para marcar a rota ativa;
+        RouterLinkActiveOptions para configura como a diretiva routerlinkactive determinar se uma rota esta ativa.          
+    -->
+
     <ul class="sidenav-nav">
+        <div class="sidenav-nav-information"></div>
         <li class="sidenav-nav-item">
-            <!--
-                RouterLinkActive para marcar a rota ativa;
-                RouterLinkActiveOptions para configura como a diretiva routerlinkactive determinar se uma rota esta ativa.          
-            -->
             <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
                 <fa-icon [icon]="faHome" class="sidenav-link-icon"></fa-icon>
                 <span class="sidenav-link-text" *ngIf="collapsed">Dashboard</span>
             </a>
         </li>
+
+        <li class="sidenav-nav-item">
+            <a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
+                <mat-icon fontIcon="inventory 2" class="sidenav-link-icon"></mat-icon>
+                <span class="sidenav-link-text" *ngIf="collapsed">Products</span>
+            </a>
+        </li>
+
+        <li class="sidenav-nav-item">
+            <a routerLink="/statistics" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
+                <mat-icon fontIcon="analytics" class="sidenav-link-icon"></mat-icon>
+                <span class="sidenav-link-text" *ngIf="collapsed">Statistics</span>
+            </a>
+        </li>
+
+        <li class="sidenav-nav-item">
+            <a routerLink="/coupens" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
+                <mat-icon fontIcon="article" class="sidenav-link-icon"></mat-icon>
+                <span class="sidenav-link-text" *ngIf="collapsed">Coupens</span>
+            </a>
+        </li>
+
+        <li class="sidenav-nav-item">
+            <a routerLink="/media" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
+                <mat-icon fontIcon="movie" class="sidenav-link-icon"></mat-icon>
+                <span class="sidenav-link-text" *ngIf="collapsed">Media</span>
+            </a>
+        </li>
+
+        <li class="sidenav-nav-item">
+            <a routerLink="/page" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
+                <mat-icon fontIcon="web" class="sidenav-link-icon"></mat-icon>
+                <span class="sidenav-link-text" *ngIf="collapsed">Pages</span>
+            </a>
+        </li>
+
+        <li class="sidenav-nav-item">
+            <a routerLink="/settings" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="sidenav-nav-link">
+                <mat-icon fontIcon="settings" class="sidenav-link-icon"></mat-icon>
+                <span class="sidenav-link-text" *ngIf="collapsed">Settings</span>
+            </a>
+        </li>
+
+        <div class="sidenav-nav-information-bottom" *ngIf="collapsed">
+            <h2>Titulo</h2>
+            <p>Minhas informações</p>
+        </div>
     </ul>
 </div>
