@@ -1,1 +1,20 @@
-<p>sidenav works!</p>
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">A</button>
+
+        <div class="logo-text" *ngIf="collapsed">Angular</div>
+        
+        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+            <fa-icon [icon]="faClose" class="close-icon"></fa-icon>
+        </button>
+    </div>
+    
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item">
+            <a routerLink="/dashboard" class="sidenav-nav-link">
+                <fa-icon [icon]="faHome" class="sidenav-link-icon"></fa-icon>
+                <span class="sidenav-link-text" *ngIf="collapsed">Dashboard</span>
+            </a>
+        </li>
+    </ul>
+</div>
